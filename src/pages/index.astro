@@ -1,18 +1,23 @@
 ---
-
+import Counter from "../components/Counter";
+import BaseWebsiteLayout from "../layouts/BaseWebsiteLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Lucas Ribeiro</title>
-  </head>
-  <body>
-    <h1>hey</h1>
-  </body>
-</html>
+<BaseWebsiteLayout title="Home">
+  <a href="/about">About</a>
+  <a href="/blog">Blog</a>
+  <h1>My Astro Site</h1>
+  <h1>About Me</h1>
+  <h2>... and my new Astro site!</h2>
+
+  <p>
+    I am working through Astro's introductory tutorial. This is the second page
+    on my website, and it's the first one I built myself!
+  </p>
+
+  <p>
+    This site will update as I complete more of the tutorial, so keep checking
+    back and see how my journey is going!
+  </p>
+  <Counter client:load />
+</BaseWebsiteLayout>
