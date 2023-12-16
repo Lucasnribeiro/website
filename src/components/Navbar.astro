@@ -1,0 +1,51 @@
+<nav class="navbar bg-white">
+  <ul class="nav-list">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#help">Help</a></li>
+  </ul>
+</nav>
+
+<style>
+  .navbar {
+    overflow: hidden; /* Clears floats */
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+  }
+
+  .nav-list {
+    list-style: none; /* Remove list bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Align list items in a row */
+    justify-content: space-between; /* Spread list items evenly */
+    width: 100%; /* Ensure the list covers the full width of the navbar */
+  }
+
+  .nav-list li {
+    display: flex; /* Use flexbox for list items */
+    flex: 1; /* Distribute space evenly */
+    justify-content: center; /* Center content of list items */
+  }
+
+  .nav-list li a {
+    display: block; /* Block display for links */
+    color: black; /* Text color for links */
+    text-align: center; /* Center text within links */
+    padding: 3px 10px; /* Padding inside each link */
+    text-decoration: none; /* No underline for links */
+    transition: 0.3s; /* Smooth transition for hover effects */
+  }
+
+  .nav-list li:not(:last-child) {
+    border-right: 1px solid; /* Separator between links */
+  }
+
+  .nav-list li:hover {
+    background-color:; /* Hover effect for links */
+    color: black; /* Text color on hover */
+  }
+</style>

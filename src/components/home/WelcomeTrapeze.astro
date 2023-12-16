@@ -1,0 +1,32 @@
+<div class="trapezoid overflow-hidden mt-5 bg-white">
+  <div class="absolute">
+    <p class="scrolling-text text-2xl">
+      <strong>Welcome &emsp;&emsp;&emsp;&emsp;&emsp;</strong>
+    </p>
+  </div>
+</div>
+
+<style>
+  .trapezoid {
+    width: 250px;
+    height: 40px;
+
+    border: 1px solid;
+    border-bottom: 0px;
+    clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
+  }
+
+  .scrolling-text {
+    @apply whitespace-nowrap absolute;
+    animation: scroll-text 1.4s linear infinite;
+  }
+
+  @keyframes scroll-text {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>
