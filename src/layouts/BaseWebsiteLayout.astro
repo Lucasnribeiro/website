@@ -9,8 +9,8 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
 
-  <div class="flex justify-center h-screen whitespace-nowrap">
-    <div class="w-[932px]">
+  <div class="flex justify-center h-screen shadow-lg whitespace-nowrap">
+    <div class="w-[932px] mt-10">
       <slot />
     </div>
   </div>
@@ -24,7 +24,13 @@ const { title } = Astro.props;
     body {
       font-family: "BlockKie";
       /* background-color: rgb(253, 185, 59); */
-      background-image: url(https://img.freepik.com/premium-photo/hand-drawn-snowflakes-christmas-seamless-pattern-subtle-flying-snow-flakes-chalk-snowflakes-background-admirable-chalk-handdrawn-snow-overlay-divine-holiday-season-decoration_174187-4251.jpg?w=2000);
+      background:
+        linear-gradient(to right, black, black 10%, rgba(0, 0, 0, 0) 13%),
+        linear-gradient(to left, black, black 10%, rgba(0, 0, 0, 0) 13%),
+        url(https://i.pinimg.com/564x/03/b6/58/03b6587dd1dcecd0a20fecbc0947d633.jpg)
+          no-repeat center/80%;
+      background-color: black;
+      background-blend-mode: normal;
     }
   </style>
 

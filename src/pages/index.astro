@@ -5,10 +5,10 @@ import BaseWebsiteLayout from "../layouts/BaseWebsiteLayout.astro";
 ---
 
 <BaseWebsiteLayout title="Home">
-  <Home.WelcomeTrapeze />
-  <Home.Banner />
+  <!-- <Home.WelcomeTrapeze /> -->
+  <!-- <Home.Banner /> -->
   <Navbar />
-  <div class="flex p-5 space-x-5 border border-t-0 mb-5 border-black bg-white">
+  <div class="flex p-5 space-x-5 border border-t-0 mb-5 border-white content">
     <div class="w-1/4 space-y-4">
       <Home.Spotify />
       <!-- <Home.Visitors /> -->
@@ -27,3 +27,9 @@ import BaseWebsiteLayout from "../layouts/BaseWebsiteLayout.astro";
     </div>
   </div>
 </BaseWebsiteLayout>
+
+<style>
+  .content {
+    background: rgba(24, 24, 24, 0.87);
+  }
+</style>
