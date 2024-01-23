@@ -7,6 +7,22 @@ import BaseWebsiteLayout from "../layouts/BaseWebsiteLayout.astro";
 <BaseWebsiteLayout title="Home">
   <!-- <Home.WelcomeTrapeze /> -->
   <!-- <Home.Banner /> -->
+  <div class="bg-black bg-opacity-70 rounded border border-white">
+    <pre
+      class="blog-title text-lime-500 faulty-bulb">
+      █████                                              ██            ██████████    ███            ███   █████              ████       █████████    █████     █████     ███          
+      ░░███                                              ███           ░░███░░░░███  ░░░            ░░░   ░░███              ░░███      ███░░░░░███  ░░███     ░░███     ░░░           
+       ░███        █████ ████  ██████   ██████    █████ ░░░   █████     ░███   ░░███ ████   ███████ ████  ███████    ██████   ░███     ░███    ░███  ███████   ███████   ████   ██████ 
+       ░███       ░░███ ░███  ███░░███ ░░░░░███  ███░░       ███░░      ░███    ░███░░███  ███░░███░░███ ░░░███░    ░░░░░███  ░███     ░███████████ ░░░███░   ░░░███░   ░░███  ███░░███
+       ░███        ░███ ░███ ░███ ░░░   ███████ ░░█████     ░░█████     ░███    ░███ ░███ ░███ ░███ ░███   ░███      ███████  ░███     ░███░░░░░███   ░███      ░███     ░███ ░███ ░░░ 
+       ░███      █ ░███ ░███ ░███  ███ ███░░███  ░░░░███     ░░░░███    ░███    ███  ░███ ░███ ░███ ░███   ░███ ███ ███░░███  ░███     ░███    ░███   ░███ ███  ░███ ███ ░███ ░███  ███
+       ███████████ ░░████████░░██████ ░░████████ ██████      ██████     ██████████   █████░░███████ █████  ░░█████ ░░████████ █████    █████   █████  ░░█████   ░░█████  █████░░██████ 
+      ░░░░░░░░░░░   ░░░░░░░░  ░░░░░░   ░░░░░░░░ ░░░░░░      ░░░░░░     ░░░░░░░░░░   ░░░░░  ░░░░░███░░░░░    ░░░░░   ░░░░░░░░ ░░░░░    ░░░░░   ░░░░░    ░░░░░     ░░░░░  ░░░░░  ░░░░░░  
+                                                                                           ███ ░███                                                                                    
+                                                                                          ░░██████                                                                                     
+                                                                                           ░░░░░░                                                                                                                                                                                                                               
+  </pre>
+  </div>
   <Navbar />
   <div class="flex p-5 space-x-5 border border-t-0 mb-5 border-white content">
     <div class="w-1/4 space-y-4">
@@ -31,5 +47,28 @@ import BaseWebsiteLayout from "../layouts/BaseWebsiteLayout.astro";
 <style>
   .content {
     background: rgba(24, 24, 24, 0.87);
+  }
+
+  .blog-title {
+    font-size: xx-small;
+    padding-top: 22px;
+    filter: drop-shadow(0 1px 10px);
+    animation-duration: 1s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes textflicker {
+    from {
+      text-shadow:
+        1px 0 0 #ea36af,
+        -1px 0 0 #75fa69;
+    }
+    to {
+      text-shadow:
+        1px 0.5px 2px #ea36af,
+        -1px -0.5px 2px #75fa69;
+    }
   }
 </style>
