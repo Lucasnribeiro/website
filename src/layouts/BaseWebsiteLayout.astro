@@ -1,5 +1,7 @@
 ---
 const { title } = Astro.props;
+import BlogBanner from "../components/BlogBanner.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <html>
@@ -11,7 +13,11 @@ const { title } = Astro.props;
 
   <div class="flex justify-center h-screen shadow-lg whitespace-nowrap">
     <div class="w-[932px] mt-10">
-      <slot />
+      <BlogBanner />
+      <Navbar />
+      <div class="flex p-5 space-x-5 border border-t-0 mb-5 border-white content">
+        <slot />
+      </div>
     </div>
   </div>
 
@@ -21,6 +27,9 @@ const { title } = Astro.props;
       src: url("/fonts/BlockKie.ttf");
     }
 
+    .content {
+      background: rgba(24, 24, 24, 0.87);
+    }
     body {
       font-family: "BlockKie";
       /* background-color: rgb(253, 185, 59); */
