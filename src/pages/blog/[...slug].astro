@@ -17,14 +17,14 @@ const { Content } = await post.render();
 ---
 
 <BaseLayout>
-  <article class="text-white break-words">
+  <article class="text-lime-500 break-words">
     <h1 class="text-3xl">{post.data.title}</h1>
     <p>
       published {post.data.pubDate.toDateString()}, tags: <strong
         >{post.data.tags.join(", ")}</strong
       >
     </p>
-    <hr class="mb-10" />
+    <hr class="mb-10 border-lime-500" />
     <pre
       style="white-space: pre-wrap; word-wrap: break-word;"><code><Content /></code></pre>
   </article>
