@@ -1,12 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+
+const recent = posts.reduce((latest, current) => {
+    const latestDate = new Date(latest.data.pubDate);
+    const currentDate = new Date(current.data.pubDate);
+    return currentDate > latestDate ? current : latest;
+  });
+
+---
+
 <div id="latest-post" class="border border-lime-500 text-lime-500">
   <div class="border-b border-lime-500 pl-2 bg-black bg-opacity-40">
     LATEST POST
   </div>
 
-  <div>TITLE TITLE TITLE</div>
-  <div>sep. 20, 2023</div>
-  <div class="p-2 m-2 border border-lime-500">
-    texto texto texto
-    <br /><br /><br /><br /><br />
+  <div class="px-2">
+    <div>{recent.data.title}</div>
+    <div>{recent.data.pubDate.toDateString()}</div>
+  </div>
+
+  <div style="white-space: pre-wrap; word-wrap: break-word;" class="p-2 m-2 border border-lime-500">
+    {recent.data.description}
   </div>
 </div>

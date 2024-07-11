@@ -1,13 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import LinuxNowGif from '../../assets/images/linux_now.gif'
+import InternetExplorerGif from '../../assets/images/internetexplorer.gif'
+import PcVaporWaveGif from '../../assets/images/pc_vaporwave.gif'
+
+---
 <div id="welcome" class="border border-lime-500 text-lime-500">
   <div class="border-b border-lime-500 bg-black bg-opacity-40 pl-2">
     Introduction
   </div>
   <div class="flex p-2 space-x-4">
-    <div class="w-3/4 text-sm leading-4">
-      Directly from Brazil, I present to you my website!<br /> This a little corner
-      on the web where I can share<br /> some of my hobbies, thoughts and also serve
-      as a showcase <br /> of my daytime job as a programmer.
+    <div class="w-3/5 flex flex-col justify-between">
+      <div class="text-sm leading-4">
+        Directly from Brazil, I present to you my website!<br /> This a little corner
+        on the web where I can share<br /> some of my hobbies, thoughts and write articles <br>
+        about programming.
+      </div>
+      <div class="mt-auto flex flex-row">
+        <Image src={InternetExplorerGif} alt={"A small animated banner about InternetExplorer with the saying: 'this page is best viewed with: internet explorer' "}/>
+        <a href="https://www.debian.org/"><Image src={LinuxNowGif} alt="A small Linux banner"/></a>
+      </div>
     </div>
-    <div class="w-1/4">PHOTO HERE</div>
+    <div class="w-2/5 flex flex-row justify-end">
+      <Image class="border-lime-500 border h-[180px]" src={PcVaporWaveGif} alt="Animated Vaporwave GIF of a computer monitor with some vector graphics in anime style." />
+    </div>
   </div>
 </div>
