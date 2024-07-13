@@ -7,12 +7,25 @@
   </div>
   <div id="song-info" class="flex space-x-3 p-2">
     <div id="cover">cover</div>
-    <div>
-      <div id="title">title</div>
+    <div class="overflow-hidden" style="width: 200px;">
+      <div id="title-container" class="whitespace-nowrap overflow-hidden">
+        <div id="title" class="inline-block pl-16">title</div>
+      </div>
       <div id="artist">artist</div>
     </div>
   </div>
 </div>
+
+<style>
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .scroll-animation {
+    animation: scroll-left 3s linear infinite;
+  }
+</style>
 
 <script>
   function fetchSpotifyData() {
@@ -21,14 +34,22 @@
       .then(data => {
         const songInfo = document.getElementById('song-info');
         const cover = document.getElementById('cover');
+        const titleContainer = document.getElementById('title-container');
         const title = document.getElementById('title');
         const artist = document.getElementById('artist');
 
-        if (data && data.item && songInfo && cover && title && artist) {
+        if (data && data.item && songInfo && cover && titleContainer && title && artist) {
           cover.innerHTML = `<img src="${data.item.album.images[0].url}" alt="Album Cover" width="64" height="64">`;
           title.textContent = data.item.name;
           artist.textContent = data.item.artists.map((artist: any) => artist.name).join(', ');
           songInfo.style.display = 'flex';
+
+          // Check if title needs scrolling
+          if (title.offsetWidth > titleContainer.offsetWidth) {
+            title.classList.add('scroll-animation');
+          } else {
+            title.classList.remove('scroll-animation');
+          }
         } else {
           console.error('Invalid data structure received or elements not found');
         }
