@@ -1,12 +1,42 @@
+---
+---
+
 <div class="spotify border border-lime-500 content text-lime-500">
   <div class="border-b border-lime-500 bg-black bg-opacity-40 pl-2">
-    <p>Songs</p>
+    <p>Currently listening</p>
   </div>
-  <div class="flex space-x-3 p-2">
-    <div>cover</div>
+  <div id="song-info" class="flex space-x-3 p-2">
+    <div id="cover">cover</div>
     <div>
-      <div>title</div>
-      <div>band</div>
+      <div id="title">title</div>
+      <div id="artist">artist</div>
     </div>
   </div>
 </div>
+
+<script>
+  function fetchSpotifyData() {
+    fetch('https://backend.lucasnribeiro.com/currently_playing_spotify.php')
+      .then(response => response.json())
+      .then(data => {
+        const songInfo = document.getElementById('song-info');
+        const cover = document.getElementById('cover');
+        const title = document.getElementById('title');
+        const artist = document.getElementById('artist');
+
+        
+          cover.innerHTML = `<img src="${data.item.album.images[0].url}" alt="Album Cover" width="64" height="64">`;
+          title.textContent = data.item.name;
+          artist.textContent = data.item.artists.map(artist => artist.name).join(', ');
+          songInfo.style.display = 'flex';
+  
+      })
+      .catch(error => {
+        console.error('Error fetching Spotify data:', error);
+      });
+  }
+
+  // Fetch data immediately and then every 30 seconds
+  fetchSpotifyData();
+  setInterval(fetchSpotifyData, 10000);
+</script>
