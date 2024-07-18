@@ -30,6 +30,7 @@ import Navbar from "../components/Navbar.astro";
     .content {
       background: rgba(24, 24, 24, 0.95);
     }
+
     body {
       font-family: "BlockKie";
       /* background-color: rgb(253, 185, 59); */
@@ -42,8 +43,10 @@ import Navbar from "../components/Navbar.astro";
       background-blend-mode: normal;
     }
 
-    article a {
-      text-decoration: underline !important;
+    :global(article) :global(img) {
+      display: block; 
+      margin-left: auto !important; 
+      margin-right: auto !important;
     }
   </style>
 
