@@ -15,7 +15,7 @@ import Navbar from "../components/Navbar.astro";
     <div class="w-[932px] mt-10">
       <BlogBanner />
       <Navbar />
-      <div class="flex p-5 space-x-5 border border-t-0 mb-5 border-lime-500 content">
+      <div class="flex p-5 space-x-5 border border-t-0 mb-5 pb-10 border-lime-500 content">
         <slot />
       </div>
     </div>
@@ -28,7 +28,7 @@ import Navbar from "../components/Navbar.astro";
     }
 
     .content {
-      background: rgba(24, 24, 24, 0.87);
+      background: rgba(24, 24, 24, 0.95);
     }
     body {
       font-family: "BlockKie";
@@ -40,6 +40,10 @@ import Navbar from "../components/Navbar.astro";
           no-repeat center/80%;
       background-color: black;
       background-blend-mode: normal;
+    }
+
+    article a {
+      text-decoration: underline !important;
     }
   </style>
 

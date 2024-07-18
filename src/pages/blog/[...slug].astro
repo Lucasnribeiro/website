@@ -14,6 +14,8 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"blog">;
 const post = Astro.props;
 const { Content } = await post.render();
+
+
 ---
 
 <BaseLayout>
@@ -26,6 +28,7 @@ const { Content } = await post.render();
     </p>
     <hr class="mb-10 border-lime-500" />
     <pre
+      class="leading-[17px]"
       style="white-space: pre-wrap; word-wrap: break-word;"><code><Content /></code></pre>
   </article>
 </BaseLayout>
